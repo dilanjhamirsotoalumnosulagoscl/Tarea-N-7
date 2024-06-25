@@ -1,14 +1,13 @@
 palabras = []
+palabra = input("Ingrese una palabra (o Enter para finalizar): ")
 
-while True:
-    palabra = input("Ingrese una palabra (o presione Enter para finalizar): ")
-    if palabra == "":
-        break
-    palabras.append(palabra)
-
-for palabra in palabras:
-    c = 0
+while palabra:
+    contador_a = 0
     for char in palabra:
-        if char == "A" or char == "a":
-            c += 1
-    print("La palabra '" + palabra + "' tiene " + str(c) + " caracteres 'A' o 'a'")
+        if char == 'a' or char == 'A':
+            contador_a += 1
+    palabras += [(palabra, contador_a)]
+    palabra = input("Ingrese una palabra (o Enter para finalizar): ")
+
+for palabra, contador_a in palabras:
+    print("La palabra '" + palabra + "' tiene " + str(contador_a) + " letras 'A' o 'a'.")
