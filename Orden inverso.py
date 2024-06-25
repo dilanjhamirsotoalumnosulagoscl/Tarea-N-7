@@ -1,10 +1,13 @@
-
 numeros = []
 
-for i in range(10):
-    num = int(input(f"Ingrese número {i+1}: "))
-    numeros.append(num)
+i = 0
+while i < 10:
+    num = int(input("Ingrese un número: "))
+    numeros = numeros + [num]
+    i += 1
 
 print("Los números en orden inverso son:")
-for num in reversed(numeros):
-    print(num)
+i = len(numeros) - 1
+while i >= 0:
+    print(numeros[i])
+    i -= 1
